@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.hamburger-bcgd {
+    border: solid 2px black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.hamburger {
+    height: 7px;
+    width: 65px;
+    background-color: #000;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    height: 7px;
+    width: 65px;
+    background-color: #000;
+    position: absolute;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.hamburger::before {
+    transform: translateY(-15px);
+}
+
+.hamburger::after {
+    transform: translateY(15px);
+}
+
+.hamburger-bcgd.open .hamburger {
+    transform: translateX(50px);
+    background: transparent;
+}
+
+.hamburger-bcgd.open .hamburger::before {
+    transform: rotate(45deg) translate(-35px, 35px)
+}
+
+.hamburger-bcgd.open .hamburger::after {
+    transform: rotate(-45deg) translate(-35px, -35px)
+}
